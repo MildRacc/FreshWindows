@@ -33,7 +33,7 @@ export default function App() {
       <div className='interaction'>
         <button onClick={submitUrl}>↵</button>
         <label htmlFor="urlInput"></label>
-        <input type='url' id="urlInput" name="urlInput" placeholder="Type URL Here..."/>
+        <input type='url' id="urlInput" name="urlInput" placeholder="Type URL Here... Or Don't"/>
       </div>
     </div>
   );
