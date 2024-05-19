@@ -23,7 +23,6 @@ const websites = [
     "https://cant-not-tweet-this.com/",
     "https://theuselessweb.com/",
     "https://hackertyper.com/",
-    "https://papertoilet.com/",
     "https://www.beesbeesbeesbees.com/",
     "https://pointerpointer.com/",
     "https://screamintothevoid.com/",
@@ -35,9 +34,7 @@ const websites = [
     "https://sleepopolis.com/calculators/sleep/",
     "https://trypap.com/",
     "https://29a.ch/sandbox/2011/neonflames/",
-    "http://weavesilk.com/",
     "https://www.omfgdogs.com/",
-    "http://orteil.dashnet.org/experiments/dungeongenerator/"
 ]
 
 export default websites
