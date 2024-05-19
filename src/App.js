@@ -1,25 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import FreshWindow from './FreshWindow';
+import ReactDOM from 'react-dom'
+import websites from './websites';
 
-function App() {
+export default function App() {
+  const [sites, setWebsites] = useState([]);
+
+  function getRandomLink(){
+    return websites[Math.floor(Math.random() * websites.length)]
+  }
+
+  function submitUrl(event){
+    event.preventDefault(); // Prevent default form submission behavior
+
+    const urlInput = document.getElementById("urlInput");
+    let url = urlInput.value;
+
+    if (url === "") {
+      // If the input is empty, select a random link
+      url = getRandomLink();
+    }
+
+    setWebsites(prevWebsites => [...prevWebsites, url]); // Add the entered URL to the websites list
+    urlInput.value = ""; // Clear the input field after submission
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {sites.map((website, index) => (
+        <FreshWindow key={index} website={website} />
+      ))}
+      <div className='interaction'>
+        <button onClick={submitUrl}>↵</button>
+        <label htmlFor="urlInput"></label>
+        <input type='url' id="urlInput" name="urlInput" placeholder="Type URL Here..."/>
+      </div>
     </div>
   );
 }
 
-export default App;
