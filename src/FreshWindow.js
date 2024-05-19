@@ -138,17 +138,3 @@ function randomHex(length){
           
     return result
   }
-
-function fetchJsonFile() {
-return fetch('./websites.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
-        return response.json();
-    })
-    .catch(error => {
-        console.error('Error fetching JSON data:', error);
-        throw error;
-    });
-}

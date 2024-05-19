@@ -1,7 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
 import FreshWindow from './FreshWindow';
-import ReactDOM from 'react-dom'
 import websites from './websites';
 
 export default function App() {
